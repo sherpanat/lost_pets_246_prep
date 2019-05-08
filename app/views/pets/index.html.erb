@@ -1,14 +1,14 @@
-<h1>Liste des animaux retrouvés</h1>
+<h1 class="text-center">Liste des animaux retrouvés</h1>
 
 <ul>  
   <% @pets.each do |pet| %>
     <li>
       <p>
         <%= pet.name %> - Found <%= pet.found_days_ago %> day ago
-        <%= link_to '+', pet_path(pet) %>
+        <%= link_to '+', pet_path(pet), class: 'btn btn-primary' %>
       </p>
     </li>
   <% end %>
 </ul>
 
-<%= link_to 'Vous avez trouvé un animal', new_pet_path %>
+<%= link_to 'Vous avez trouvé un animal', new_pet_path, class: 'btn btn-success' %>

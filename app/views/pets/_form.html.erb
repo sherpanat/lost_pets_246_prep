@@ -1,15 +1,31 @@
-<%= form_for pet do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+<%#= form_for pet do |f| %>
+  <%# <div class="form-group"> %>
+    <%#= f.label :name %>
+    <%#= f.text_field :name %>
+  <%# </div> %>
 
-  <%= f.label :address %>
-  <%= f.text_field :address %>
+  <%# <div class="form-group"> %>
+    <%#= f.label :address %>
+    <%#= f.text_field :address %>
+  <%# </div> %>
 
-  <%= f.label :species %>
-  <%= f.select :species, species %>
+  <%# <div class="form-group"> %>
+    <%#= f.label :species %>
+    <%#= f.select :species, species %>
+  <%# </div> %>
 
-  <%= f.label :species %>
-  <%= f.date_field :found_on %>
+  <%# <div class="form-group"> %>
+    <%#= f.label :found_on %>
+    <%#= f.date_field :found_on %>
+  <%# </div> %>
 
-  <%= f.submit "Validez l'ajout" %>
+  <%#= f.submit "Validez l'ajout", class: 'btn-primary' %>
+<%# end %>
+
+<%= simple_form_for pet do |f| %>
+  <%= f.input :name, label: 'Nom', error: 'Le nome est obligatoire' %>
+  <%= f.input :address, placeholder: '107 cours balguerie stuttenberg 33300 Bordeaux' %>
+  <%= f.input :species, collection: species, promp: "Sélectionnez l'espèce", selected: 'rabbit', error: "L'espèce doit être contenue dans la liste" %>
+  <%= f.input :found_on, as: :date, html5: true, hint: "Inscrivez l'adresse complète" %>
+  <%= f.button :submit, 'Enregistrer', class: 'btn-success' %>
 <% end %>
