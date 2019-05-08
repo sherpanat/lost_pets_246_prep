@@ -1,0 +1,15 @@
+<%= form_for pet do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :address %>
+  <%= f.text_field :address %>
+
+  <%= f.label :species %>
+  <%= f.select :species, species %>
+
+  <%= f.label :species %>
+  <%= f.date_field :found_on %>
+
+  <%= f.submit "Validez l'ajout" %>
+<% end %>

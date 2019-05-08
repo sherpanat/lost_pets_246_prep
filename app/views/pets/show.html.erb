@@ -1,0 +1,9 @@
+<h1><%= @pet.name %></h1>
+<ul>
+  <li><p>Adresse : <%= @pet.address %></p></li>
+  <li><p>Animal : <%= @pet.species.capitalize %></p></li>
+</ul>
+
+<%= link_to 'Modifier', edit_pet_path(@pet) %>
+<%= link_to 'Supprimer', pet_path(@pet), method: :delete %>
+<%= link_to 'Retour à la liste', pets_path %>
